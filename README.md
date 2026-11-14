@@ -2,19 +2,15 @@
 
 A concept website for a fictional Swiss watch atelier. As you scroll, a canvas film takes the Heure Bleue apart into its 312 parts, dives into the movement to the beating balance wheel, and puts it back together.
 
-**Features**
-- Loader: a balance wheel winds a 72-hour power reserve, then a knurled caseback unscrews open onto the film
-- Scroll-scrubbed film from four clips (768 full-quality 1280×720 WebP frames), with part labels anchored to the frames
-- Frames are kept compressed and decoded on demand around the playhead
-- Calibre V21 section with a balance beating at the real 3 Hz
-- Rose-engine guilloché dial you can turn
-- Live Le Brassus clock
-- Pages: Collection (with loupe zoom), Atelier, Maison, and Private viewing
-- Private viewing booking:
-  - salon-local days and times
-  - saved on the device, with cancel and undo
-  - calendar (.ics) export
+**What it is:** an app with a landing-page front.
+- **Home:** an interactive hero. Move across the watch to turn it, and hold the button to take it apart into its 312 parts (with labels). Release it to rebuild.
+- **The movement:** the Calibre V21 balance plays live, with a counter of beats since you arrived.
+- **Shop:** the collection and product pages, with strap choice, hand engraving and stock per year.
+- **Bag and checkout:** hand delivery or salon collection, paid at handover. Nothing is charged; this is a concept.
+- **Vault:** every watch you own, with its serial number, certificate of origin, live power-reserve gauge ("I just wound it"), its journey and its service book.
+- **Viewings:** private viewings, applications and services, with salon-local days and times.
+- **Style:** an ebony and champagne palette, self-hosted Cormorant Garamond and Jost, a loupe cursor and a caseback page transition.
 
 Open `index.html` through any static server, e.g. `python3 -m http.server`, or with GitHub Pages.
 
-Concept website. Vaucret is a fictional maison; watches and prices are illustrative. Images and clips were generated with Google Flow.
+Concept app. Vaucret is a fictional maison; watches, prices and orders are illustrative. Images and clips were generated with Google Flow.
