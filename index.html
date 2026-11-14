@@ -431,6 +431,119 @@ input,select,textarea{font:inherit;color:inherit}
 .cur-r.link{width:56px;height:56px;margin:-28px 0 0 -28px;border-color:var(--ch)}
 @media (hover:none),(pointer:coarse){.cur,.cur-r{display:none}}
 
+/* ═══ features ═══ */
+.hd-link{font-size:12.5px;letter-spacing:.1em;color:var(--smoke);padding:0 8px;transition:color .3s}
+.hd-link:hover{color:var(--iv)}
+.cur-sel select{appearance:none;-webkit-appearance:none;height:42px;padding:0 30px 0 14px;border-radius:999px;border:1px solid rgba(239,232,219,.14);background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23C9AA74'/%3E%3C/svg%3E") no-repeat right 12px center;font-size:12.5px;letter-spacing:.08em;color:var(--iv);cursor:pointer}
+.cur-sel select:hover{border-color:var(--ch)}
+.cur-sel option{background:var(--eb-2)}
+@media (max-width:640px){.hd-link{display:none}}
+/* live dial */
+.lt{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,90px);align-items:center;overflow:hidden}
+.lt-dial{position:relative;aspect-ratio:1;max-width:620px;width:100%;justify-self:center}
+.lt-dial svg{width:100%;height:100%;overflow:visible}
+.lt-ctl{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:30px 0 18px}
+.seg{display:inline-flex;padding:4px;border-radius:999px;border:1px solid rgba(201,170,116,.3);background:rgba(28,23,18,.6)}
+.seg label{position:relative}
+.seg input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.seg span{display:block;padding:9px 16px;border-radius:999px;font-size:12.5px;letter-spacing:.08em;color:var(--smoke);transition:all .5s var(--e)}
+.seg input:checked+span{background:var(--gold);color:var(--ink)}
+.seg input:focus-visible+span{outline:1.5px solid var(--ch);outline-offset:2px}
+.sound{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 16px;border-radius:999px;border:1px solid rgba(201,170,116,.3);font-size:12.5px;letter-spacing:.08em;color:var(--iv)}
+.sound[aria-pressed="true"]{border-color:var(--ch);background:rgba(201,170,116,.1)}
+.eq{display:inline-flex;gap:2px;align-items:end;height:12px}
+.eq i{width:2px;height:4px;background:var(--ch);border-radius:1px}
+.sound[aria-pressed="true"] .eq i{animation:eq .333s ease-in-out infinite alternate}
+.sound[aria-pressed="true"] .eq i:nth-child(2){animation-delay:.11s}.sound[aria-pressed="true"] .eq i:nth-child(3){animation-delay:.22s}
+@keyframes eq{to{height:12px}}
+.lt-time{font-size:13px;letter-spacing:.08em;color:var(--smoke)}
+.lt-time b{font-family:var(--serif);font-weight:300;font-size:28px;color:var(--iv);margin-left:8px;letter-spacing:0}
+/* lighting moods on any rendered watch */
+.wd .light{transition:opacity 1.2s var(--e)}
+.wd .lume-g{transition:opacity 1.2s var(--e)}
+[data-light="day"] .wd .l-candle,[data-light="day"] .wd .l-night{opacity:0}
+[data-light="candle"] .wd .l-night{opacity:0}[data-light="candle"] .wd .l-candle{opacity:1}
+[data-light="lume"] .wd .l-candle{opacity:0}[data-light="lume"] .wd .l-night{opacity:1}
+.wd .lume-g{opacity:0}[data-light="lume"] .wd .lume-g{opacity:1}
+[data-light="candle"] .wd .lume-g{opacity:.15}
+@media (max-width:900px){.lt{grid-template-columns:1fr}.lt-dial{max-width:440px;order:-1}}
+/* product: try it */
+.try{margin-top:16px;padding:18px;border-radius:16px;background:var(--eb-3);border:1px solid rgba(201,170,116,.2)}
+.try-r{display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:center}
+.try .wdw{aspect-ratio:1}
+.try .wdw svg{width:100%;height:100%;overflow:visible}
+.try p{font-size:13px;color:var(--smoke);margin-bottom:10px}
+.try .seg span{padding:7px 12px;font-size:11.5px}
+@media (max-width:480px){.try-r{grid-template-columns:120px 1fr}}
+/* proof */
+.pf-top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,90px);align-items:end;margin-bottom:clamp(36px,6vh,60px)}
+.pf-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(16px,2vw,28px)}
+.pf-film{position:relative;border-radius:4px;overflow:hidden;background:#000;aspect-ratio:16/9}
+.pf-film video{width:100%;height:100%;object-fit:cover}
+.pf-film figcaption{position:absolute;left:18px;bottom:14px;font-size:12px;letter-spacing:.1em;color:var(--iv);opacity:.85;text-shadow:0 1px 10px rgba(0,0,0,.8)}
+.pf-bull{padding:24px;border-radius:4px;background:var(--iv-2);color:var(--ink);display:flex;flex-direction:column}
+.pf-k{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ch-lo);margin-bottom:8px}
+.pf-bull svg{width:100%;height:auto}
+.pf-bull text{font-family:var(--sans);font-size:11px;fill:var(--ink-2)}
+.pf-facts{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid rgba(26,21,16,.14)}
+.pf-facts b{display:block;font-family:var(--serif);font-weight:400;font-size:22px}
+.pf-facts span{font-size:11.5px;color:var(--ink-2);line-height:1.3;display:block}
+@media (max-width:900px){.pf-top,.pf-grid{grid-template-columns:1fr}}
+/* compare */
+.cmp-sel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,50px);margin-bottom:24px}
+.cmp-sel select{width:100%;height:52px;padding:0 16px;border-radius:12px;border:1px solid rgba(239,232,219,.18);background:var(--eb-3);color:var(--iv);font-family:var(--serif);font-size:22px}
+.cmp-viz{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,50px);align-items:end;padding:30px 0 10px;border-bottom:1px solid rgba(201,170,116,.2)}
+.cmp-viz .wdw{margin:0 auto}
+.cmp-viz p{text-align:center;font-size:12.5px;color:var(--smoke);margin-top:10px}
+.cmp-t{width:100%;border-collapse:collapse;font-size:14.5px}
+.cmp-t th{font-weight:400;color:var(--smoke);text-align:left;font-size:12.5px;letter-spacing:.08em;padding:14px 0;width:22%}
+.cmp-t td{padding:14px 0;border-bottom:1px solid rgba(201,170,116,.14);width:39%;vertical-align:top}
+.cmp-t tr{border-bottom:1px solid rgba(201,170,116,.14)}
+.cmp-t td.win{color:var(--ch-hi)}
+.cmp-t td.win::after{content:" \25C6";font-size:9px;color:var(--ch);vertical-align:2px}
+/* care */
+.care-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)}
+.care-g .panel{margin:0}
+.price-t{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+.price-t td{padding:11px 0;border-bottom:1px solid rgba(201,170,116,.14)}
+.price-t td:last-child{text-align:right;font-family:var(--serif);font-size:18px;white-space:nowrap}
+.concierge{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(201,170,116,.14)}
+.concierge:last-child{border-bottom:0}
+.avatar{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:24px;color:var(--ink);background:var(--gold)}
+.concierge b{font-weight:400;font-size:16px;display:block}
+.concierge small{color:var(--smoke);font-size:12.5px;display:block}
+.concierge .acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.faq details{border-bottom:1px solid rgba(201,170,116,.18)}
+.faq summary{list-style:none;cursor:pointer;padding:16px 0;font-family:var(--serif);font-size:21px;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--ch);transition:transform .4s var(--e)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{color:var(--smoke);font-size:14.5px;padding-bottom:16px;max-width:60ch}
+.countries{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.countries span{font-size:12.5px;padding:6px 12px;border-radius:999px;border:1px solid rgba(239,232,219,.14)}
+@media (max-width:900px){.care-g{grid-template-columns:1fr}}
+/* journal */
+.jcard{flex:0 0 min(80vw,440px);scroll-snap-align:start;position:relative}
+.jcard .ji{aspect-ratio:4/3;border-radius:4px;overflow:hidden}
+.jcard .ji img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--e)}
+.jcard:hover .ji img{transform:scale(1.05)}
+.jcard .jm{font-size:11.5px;letter-spacing:.14em;color:var(--ch);margin:16px 0 8px}
+.jcard h3{font-family:var(--serif);font-weight:300;font-size:30px;line-height:1.08}
+.jcard p{color:var(--smoke);font-size:14.5px;margin-top:8px}
+.jcard a{position:absolute;inset:0}
+.jgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr));gap:clamp(20px,3vw,40px) clamp(16px,2vw,28px)}
+.jgrid .jcard{flex:none}
+.story{max-width:760px;margin:0 auto}
+.story .jm{font-size:12px;letter-spacing:.14em;color:var(--ch);margin-bottom:16px}
+.story h1{font-family:var(--serif);font-weight:300;font-size:clamp(44px,5.6vw,84px);line-height:.98}
+.story .st-img{margin:clamp(30px,5vh,50px) calc(min(0px,(760px - 100vw)/2 + var(--g))) ;border-radius:4px;overflow:hidden;aspect-ratio:16/9}
+.story .st-img img{width:100%;height:100%;object-fit:cover}
+.story p.b{font-family:var(--serif);font-size:clamp(20px,1.6vw,23px);line-height:1.6;margin-bottom:1.1em;color:var(--iv)}
+.story p.b:first-of-type::first-letter{float:left;font-size:4.2em;line-height:.8;padding:.06em .1em 0 0;color:var(--ch)}
+.story .st-next{display:flex;justify-content:space-between;margin-top:50px;padding-top:20px;border-top:1px solid rgba(201,170,116,.2);font-size:13px;color:var(--smoke)}
+.ft-links{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:50px;font-size:13px;letter-spacing:.08em;color:var(--smoke)}
+.ft-links a:hover{color:var(--iv)}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
   .rv{opacity:1;transform:none}.split .w>span{transform:none}.rimg{clip-path:none}.rimg img{transform:none}
@@ -470,6 +583,8 @@ input,select,textarea{font:inherit;color:inherit}
   <p class="hd-l"><i class="beat" id="beat" aria-hidden="true"></i><span class="where">Le Brassus</span> <b id="clk">--:--:--</b></p>
   <a class="mark" href="#" data-home aria-label="Vaucret, home">VAUCRET<small aria-hidden="true">Vallée de Joux</small></a>
   <div class="hd-r">
+    <a class="hd-link" href="#journal">Journal</a>
+    <label class="cur-sel"><span class="sr">Currency</span><select id="curSel" aria-label="Currency"><option>CHF</option><option>INR</option><option>USD</option></select></label>
     <a class="icon-btn" href="#bag" aria-label="Bag" id="hdBag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="badge" id="bagN">0</span></a>
   </div>
 </header>
@@ -524,10 +639,40 @@ input,select,textarea{font:inherit;color:inherit}
     </div>
   </section>
 
+  <!-- light & time -->
+  <section class="sec lt" aria-labelledby="lt-h">
+    <div class="lt-tx">
+      <p class="eyebrow">Light and time</p>
+      <h2 class="h2 split" id="lt-h">See it at <em>your hour.</em></h2>
+      <p class="lede rv">The hands show the time where you are, right now. Change the light to see the dial at noon, by candlelight, or at night when the lume wakes up.</p>
+      <div class="lt-ctl rv">
+        <div class="seg" role="radiogroup" aria-label="Light" id="ltLight"><label><input type="radio" name="lt" value="day" checked><span>Daylight</span></label><label><input type="radio" name="lt" value="candle"><span>Candlelight</span></label><label><input type="radio" name="lt" value="lume"><span>Night</span></label></div>
+        <button class="sound" type="button" id="snd" aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span id="sndL">Listen to it tick</span></button>
+        <button class="btn line sm" type="button" id="windBtn">Wind the crown</button>
+      </div>
+      <p class="lt-time" aria-live="off"><span id="ltWhere">Your time</span> <b class="tnum" id="ltTime">--:--</b></p>
+    </div>
+    <div class="lt-dial" id="ltDial" data-light="day" role="img" aria-label="The Heure Bleue dial showing your current time"></div>
+  </section>
+
   <!-- shelf -->
   <section class="sec" aria-labelledby="sh-h" style="padding-top:0">
     <div class="shelf-h"><div><p class="eyebrow">The collection</p><h2 class="h2 split" id="sh-h">Four <em>watches.</em></h2></div><a class="btn line sm" href="#shop">See all</a></div>
     <div class="shelf" id="shelf"></div>
+  </section>
+
+  <!-- proof -->
+  <section class="sec proof" aria-labelledby="pf-h">
+    <div class="pf-top"><div><p class="eyebrow">Proof, not promises</p><h2 class="h2 split" id="pf-h">Tested for 31 days<br><em>before it leaves.</em></h2></div>
+      <p class="lede rv">Every movement is timed in six positions and at three temperatures. Its results go into its certificate, so you can see exactly how your watch ran on the bench.</p></div>
+    <div class="pf-grid">
+      <figure class="pf-film rimg"><video id="film" muted loop playsinline preload="none" poster="img/watchmaker.webp" aria-label="Florian Meylan fitting a part into a movement at his bench"><source src="media/bench.mp4" type="video/mp4"></video><figcaption>Florian Meylan at bench four, Le Brassus</figcaption></figure>
+      <div class="pf-bull rv">
+        <p class="pf-k">Bulletin de marche, Calibre V21</p>
+        <svg viewBox="0 0 520 300" id="bull" role="img" aria-label="Daily rate in six positions, all within plus or minus two seconds a day"></svg>
+        <ul class="pf-facts"><li><b>±2 s</b><span>a day, our limit</span></li><li><b>10 years</b><span>warranty</span></li><li><b>For life</b><span>service at the same bench</span></li></ul>
+      </div>
+    </div>
   </section>
 
   <!-- case -->
@@ -569,6 +714,12 @@ input,select,textarea{font:inherit;color:inherit}
       <h2 class="va-h" id="va-h">A thousand metres up, winter lasts six months. <em class="goldtx" id="vaG">Long enough to finish a watch properly.</em></h2></div>
   </section>
 
+  <!-- journal -->
+  <section class="sec" aria-labelledby="jr-h" style="padding-top:0">
+    <div class="shelf-h"><div><p class="eyebrow">The journal</p><h2 class="h2 split" id="jr-h">Notes from <em>the valley.</em></h2></div><a class="btn line sm" href="#journal">All stories</a></div>
+    <div class="shelf" id="jShelf"></div>
+  </section>
+
   <!-- vault teaser -->
   <section class="sec vt" aria-labelledby="vt-h">
     <div class="vt-cards" aria-hidden="true" id="vtCards">
@@ -588,6 +739,7 @@ input,select,textarea{font:inherit;color:inherit}
       <div class="clock" aria-hidden="true"><svg viewBox="0 0 200 200" id="ftc"></svg></div>
       <div><h2>It is <span class="tnum" id="ftT">--:--</span> in the valley.</h2><p id="ftN">The atelier is open Tuesday to Saturday, 8 am to 5 pm.</p></div>
     </div>
+    <nav class="ft-links" aria-label="Footer"><a href="#shop">Collection</a><a href="#compare">Compare</a><a href="#journal">Journal</a><a href="#care">Care and services</a><a href="#viewings">Private viewings</a></nav>
     <p class="ft-word" aria-hidden="true">VAUCRET</p>
     <div class="ft-base"><span>Concept app. Vaucret is a fictional maison; watches, prices and orders are illustrative and nothing is charged.</span><span>Images generated for this concept.</span></div>
   </footer>
@@ -601,6 +753,10 @@ input,select,textarea{font:inherit;color:inherit}
 <section class="view" data-lenis-prevent id="v-order" aria-label="Order confirmed" tabindex="-1"><div class="view-in" id="vOrder"></div></section>
 <section class="view" data-lenis-prevent id="v-vault" aria-label="Your vault" tabindex="-1"><div class="view-in" id="vVault"></div></section>
 <section class="view" data-lenis-prevent id="v-owned" aria-label="Your watch" tabindex="-1"><div class="view-in" id="vOwned"></div></section>
+<section class="view" data-lenis-prevent id="v-compare" aria-label="Compare" tabindex="-1"><div class="view-in"></div></section>
+<section class="view" data-lenis-prevent id="v-care" aria-label="Care and services" tabindex="-1"><div class="view-in"></div></section>
+<section class="view" data-lenis-prevent id="v-journal" aria-label="Journal" tabindex="-1"><div class="view-in"></div></section>
+<section class="view" data-lenis-prevent id="v-story" aria-label="Story" tabindex="-1"><div class="view-in"></div></section>
 <section class="view" data-lenis-prevent id="v-viewings" aria-label="Viewings" tabindex="-1"><div class="view-in" id="vView"></div></section>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -613,29 +769,33 @@ const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)), lerp=(a,b,t)=>a+(b-a)*t;
 const ease=t=>1-Math.pow(1-t,3), eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const chf=n=>'CHF '+n.toLocaleString('en-US');
+let CURR='CHF';
+const chf=n=>{ const c=CUR[CURR]||CUR.CHF; return c.f(n*c.r); };
 const ICON={plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>',back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>'};
 const SIG='M8 62 C30 20 44 18 46 40 C48 62 30 74 34 58 C38 42 62 30 70 46 C76 58 66 70 72 60 C80 46 92 40 98 52 C102 62 112 50 120 44 C130 38 132 58 142 52 C152 46 156 30 166 44 C172 54 180 50 190 40 C200 30 214 36 232 30';
 
 /* ───── catalogue ───── */
 const W=[
- {id:'2104',name:'Heure Bleue',price:46500,img:'hero',gal:['hero','dial','caseback','wrist','box'],metal:'White gold',comp:'Time and small seconds',case:'40 mm white gold, fluted bezel',dial:'Midnight-blue grand feu over a guilloché sunburst',cal:'V21, hand-wound, 72 hours',made:5,straps:['Navy alligator','Black alligator','Cognac calf'],maker:'Élise Vaucret',
+ {id:'2104',name:'Heure Bleue',price:46500,img:'hero',gal:['hero','dial','caseback','wrist','box'],metal:'White gold',comp:'Time and small seconds',case:'40 mm white gold, fluted bezel',dial:'Midnight-blue grand feu over a guilloché sunburst',cal:'V21, hand-wound, 72 hours',made:5,dia:40,thick:9.8,water:30,lug:20,look:{case:['#F2F0EA','#A9A6A0','#E4E1DA'],dial:['#2A4A8E','#0E1A3D'],idx:'#E3B79A',hand:'#E8C2A6',lume:'#B9F3E4',guil:'sun',sub:true,flute:true},straps:['Navy alligator','Black alligator','Cognac calf'],maker:'Élise Vaucret',
   lede:'The watch you just took apart. Seven coats of blue enamel over a hand-turned sunburst, so the dial runs from navy to almost black as the light moves.'},
- {id:'1906',name:'Saumon',price:18900,img:'ref-salmon',gal:['ref-salmon','watchroll'],metal:'Steel',comp:'Time and small seconds',case:'39 mm steel, polished and brushed',dial:'Salmon sector dial, blued steel hands',cal:'V18, hand-wound, 60 hours',made:3,straps:['Tan suede','Brown calf','Navy alligator'],maker:'Florian Meylan',
+ {id:'1906',name:'Saumon',price:18900,img:'ref-salmon',gal:['ref-salmon','watchroll'],metal:'Steel',comp:'Time and small seconds',case:'39 mm steel, polished and brushed',dial:'Salmon sector dial, blued steel hands',cal:'V18, hand-wound, 60 hours',made:3,dia:39,thick:10.4,water:50,lug:20,look:{case:['#EDEDEB','#9C9C99','#D9D9D6'],dial:['#F2C3A8','#D99A7C'],idx:'#2B3A63',hand:'#2C4A9A',lume:'#C8F5D8',guil:'sector',sub:true},straps:['Tan suede','Brown calf','Navy alligator'],maker:'Florian Meylan',
   lede:'A reissue of the watch Élise Vaucret made for her husband in 1906. The only Vaucret in steel, and the one we would wear every day.'},
- {id:'3001',name:'Tourbillon Volant',price:214000,img:'ref-tourbillon',gal:['ref-tourbillon','watchroll'],metal:'Rose gold',comp:'Flying tourbillon',case:'42 mm rose gold, open caseback',dial:'Smoked anthracite, skeletonised bridges',cal:'V30, flying tourbillon, 80 hours',made:1,straps:['Black alligator'],maker:'Mireille Golay',apply:true,
+ {id:'3001',name:'Tourbillon Volant',price:214000,img:'ref-tourbillon',gal:['ref-tourbillon','watchroll'],metal:'Rose gold',comp:'Flying tourbillon',case:'42 mm rose gold, open caseback',dial:'Smoked anthracite, skeletonised bridges',cal:'V30, flying tourbillon, 80 hours',made:1,dia:42,thick:11.6,water:30,lug:21,look:{case:['#F4CDB0','#A8684A','#E7B494'],dial:['#4A4643','#1C1A19'],idx:'#F0C6A6',hand:'#F0C6A6',lume:'#B9F3E4',guil:'skeleton',tourb:true},straps:['Black alligator'],maker:'Mireille Golay',apply:true,
   lede:'A cage of 74 parts that weighs less than a third of a gram turns once a minute at six o’clock. One is made each year, by application.'},
- {id:'2280',name:'Phase de Lune Onyx',price:64000,img:'ref-moonphase',gal:['ref-moonphase','onyx-dinner'],metal:'Platinum',comp:'Moon phase',case:'38 mm platinum',dial:'Black onyx, gold moon disc',cal:'V24, moon phase, 72 hours',made:2,straps:['Black alligator','Grey alligator'],maker:'Élise Vaucret',
+ {id:'2280',name:'Phase de Lune Onyx',price:64000,img:'ref-moonphase',gal:['ref-moonphase','onyx-dinner'],metal:'Platinum',comp:'Moon phase',case:'38 mm platinum',dial:'Black onyx, gold moon disc',cal:'V24, moon phase, 72 hours',made:2,dia:38,thick:9.4,water:30,lug:19,look:{case:['#F1F2F3','#A3A6AA','#DDE0E3'],dial:['#1E1F22','#050506'],idx:'#E8D3A6',hand:'#F0F0EE',lume:'#B9F3E4',guil:'none',moon:true},straps:['Black alligator','Grey alligator'],maker:'Élise Vaucret',
   lede:'A slice of onyx and a gold moon. Accurate for 122 years before it needs correcting by a single day.'}
 ];
 const byId=id=>W.find(w=>w.id===id);
+const STRAPS={'Navy alligator':['#1E2A4A','#0E1527','croc'],'Black alligator':['#1A1A1A','#050505','croc'],'Grey alligator':['#5C5F64','#33363A','croc'],'Cognac calf':['#9A5A2C','#5E3317','calf'],'Brown calf':['#5A3A24','#2E1C10','calf'],'Tan suede':['#B98A5E','#8A6240','suede']};
+/* ───── money: CHF with indicative conversions ───── */
+const CUR={CHF:{r:1,f:n=>'CHF '+Math.round(n).toLocaleString('en-US')},INR:{r:117,f:n=>'₹'+(Math.round(n/1000)*1000).toLocaleString('en-IN')},USD:{r:1.23,f:n=>'$'+(Math.round(n/100)*100).toLocaleString('en-US')}};
 const SALONS=[{id:'lb',name:'Le Brassus',tz:'Europe/Zurich',days:[2,3,4,5,6],times:['09:30','11:00','14:00','15:30']},{id:'ge',name:'Geneva',tz:'Europe/Zurich',days:[1,2,3,4,5,6],times:['10:30','12:00','14:30','16:00','17:30']},{id:'bom',name:'Mumbai',tz:'Asia/Kolkata',days:[1,2,3,4,5,6],times:['11:00','12:30','15:00','16:30','18:00']}];
 
 /* ───── storage ───── */
 const K='vaucret.app.v1';
 const DB={ load(){ try{ const v=JSON.parse(localStorage.getItem(K)||'{}'); return {bag:v.bag||[],orders:v.orders||[],vault:v.vault||[],viewings:v.viewings||[]}; }catch(e){ return {bag:[],orders:[],vault:[],viewings:[]}; } },
   save(){ try{ localStorage.setItem(K,JSON.stringify(S)); return true; }catch(e){ return false; } } };
-let S=DB.load();
+let S=DB.load(); CURR=localStorage.getItem('vaucret.cur')||'CHF';
 addEventListener('storage',e=>{ if(e.key===K){ S=DB.load(); syncBadges(); if(current) render(current,curSub); } });
 const sold=id=>S.vault.filter(v=>v.id===id).length;
 const left=w=>Math.max(0,w.made-sold(w.id)-(w.id==='2104'?3:w.id==='1906'?1:w.id==='2280'?1:0));
@@ -773,17 +933,18 @@ const back=(href,label)=>`<a class="back" href="${href}" ${href==='#'?'data-home
 const V={
 shop(){ const f=V._f||'all'; const list=W.filter(w=>f==='all'||w.metal===f);
   return `<div class="v-top"><div><h1 class="v-h">The <em>collection.</em></h1><p class="v-sub">Four references, each made in very small numbers. Prices include hand delivery and lifetime service.</p></div>
-  <div class="chips" role="radiogroup" aria-label="Filter by metal">${['all','White gold','Steel','Rose gold','Platinum'].map(m=>`<label class="chip"><input type="radio" name="metal" value="${m}" ${m===f?'checked':''}><span>${m==='all'?'All':m}</span></label>`).join('')}</div></div>
+  <a class="btn line sm" href="#compare">Compare two watches</a><div class="chips" role="radiogroup" aria-label="Filter by metal">${['all','White gold','Steel','Rose gold','Platinum'].map(m=>`<label class="chip"><input type="radio" name="metal" value="${m}" ${m===f?'checked':''}><span>${m==='all'?'All':m}</span></label>`).join('')}</div></div>
   <div class="grid">${list.map(cardHTML).join('')}</div>`; },
 watch(id){ const w=byId(id); if(!w) return V.shop(); const l=left(w), i=W.indexOf(w);
   const stock= w.apply?'Made once a year, offered by application.':l===0?'This year’s pieces are allocated.':`<b>${l===1?'The last piece':l+' pieces'}</b> left for this year.`;
   return `${back('#shop','The collection')}<div class="pd"><div class="pd-gal"><div class="pd-main" id="pdMain"><img src="img/${w.gal[0]}.webp" alt="${esc(w.name)}"></div>
-   <div class="pd-thumbs" role="group" aria-label="Photographs">${w.gal.map((g,k)=>`<button type="button" data-g="${g}" aria-pressed="${k===0}" aria-label="Photograph ${k+1} of ${w.gal.length}"><img src="img/${g}.webp" alt=""></button>`).join('')}</div></div>
+   <div class="pd-thumbs" role="group" aria-label="Photographs">${w.gal.map((g,k)=>`<button type="button" data-g="${g}" aria-pressed="${k===0}" aria-label="Photograph ${k+1} of ${w.gal.length}"><img src="img/${g}.webp" alt=""></button>`).join('')}</div>
+   <div class="try" id="try" data-light="day"><div class="try-r"><div class="wdw" id="tryW">${watchSVG(w,w.straps[0],{tight:true})}</div><div><p>Your configuration, at your time. Change the strap and the light.</p><div class="seg" role="radiogroup" aria-label="Light" id="tryL"><label><input type="radio" name="tl" value="day" checked><span>Day</span></label><label><input type="radio" name="tl" value="candle"><span>Candle</span></label><label><input type="radio" name="tl" value="lume"><span>Night</span></label></div></div></div></div></div>
   <div><h1>${esc(w.name)}</h1><p class="pd-ref">Reference ${w.id}</p><p class="pd-price tnum">${chf(w.price)}</p><p class="pd-stock">${stock}</p><p class="pd-lede">${esc(w.lede)}</p>
    ${w.apply?'':`<fieldset class="opt" style="border:0"><h3 id="sl">Strap</h3><div class="chips" role="radiogroup" aria-labelledby="sl">${w.straps.map((s,k)=>`<label class="chip"><input type="radio" name="strap" value="${esc(s)}" ${k?'':'checked'}><span>${esc(s)}</span></label>`).join('')}</div></fieldset>
    <div class="opt field"><label for="engr">Engraving on the caseback (optional)</label><input id="engr" class="engr" maxlength="24" placeholder="For example, initials and a date" autocomplete="off"><p class="hint"><span id="engrN">0</span> of 24 letters. Engraved by hand, two extra days.</p></div>`}
    <div class="pd-acts">${w.apply?`<a class="btn gold" href="#viewings/apply-${w.id}">Apply for this watch</a>`:l>0?(inBag(w.id)?`<a class="btn gold" href="#bag">In your bag, view bag</a>`:`<button class="btn gold" type="button" data-add="${w.id}">Add to bag</button>`):`<a class="btn gold" href="#viewings">Join the list</a>`}<a class="btn line" href="#viewings/see-${w.id}">See it in person</a></div>
-   <p class="pd-note">Hand delivered by the house, or collected at a salon. Paid at handover; nothing is charged online.</p>
+   <p class="pd-note">Hand delivered by the house, or collected at a salon. Paid at handover; nothing is charged online. <a href="#care" style="text-decoration:underline">Warranty, service and delivery</a> · <a href="#compare/${w.id}/${W[(i+1)%4].id}" style="text-decoration:underline">Compare</a></p>
    <ul class="pd-specs"><li><span>Case</span>${esc(w.case)}</li><li><span>Dial</span>${esc(w.dial)}</li><li><span>Movement</span>${esc(w.cal)}</li><li><span>Made</span>${w.made} a year</li><li><span>Watchmaker</span>${esc(w.maker)}</li></ul>
    <nav style="display:flex;justify-content:space-between;margin-top:34px;font-size:13px;color:var(--smoke)" aria-label="Other watches"><a href="#watch/${W[(i+3)%4].id}">${esc(W[(i+3)%4].name)}</a><a href="#watch/${W[(i+1)%4].id}">${esc(W[(i+1)%4].name)}</a></nav></div></div>`; },
 bag(){ if(!S.bag.length) return `<h1 class="v-h">Your <em>bag.</em></h1><div class="empty"><p>Nothing here yet.</p><span>Each watch is made in very small numbers. Take your time.</span><a class="btn gold" href="#shop">Browse the collection</a></div>`;
@@ -815,10 +976,43 @@ owned(sn){ const v=S.vault.find(x=>x.serial===sn); if(!v) return V.vault(); cons
     <div class="sig"><div><svg viewBox="0 0 240 88" aria-hidden="true"><path d="${SIG}"/></svg><br>${esc(w.maker)}, Le Brassus</div><div class="seal" aria-hidden="true">V</div></div></div></div>
   <div>
    <div class="panel"><h3>Power reserve</h3><div class="reserve">${gauge(r.frac,150,true)}<div><p class="rv-n tnum" id="rvN">${r.frac>0?r.text:'Stopped'}</p><p id="rvT">${r.frac>0?`It will stop ${r.stops}.`:'Give the crown about 30 turns to wind it fully.'}</p><button class="btn line sm" type="button" id="wound" style="margin-top:14px">I just wound it</button></div></div></div>
+   <div class="panel" style="background:var(--iv-2);color:var(--ink)"><h3>Its timing bulletin</h3><p style="color:var(--ink-2)">How this movement ran on the bench, in seconds a day.</p><div class="pf-bull" style="padding:0;background:none"><svg viewBox="0 0 520 300" role="img" aria-label="Daily rate in six positions for serial ${esc(v.serial)}">${bulletin(rates(v.serial))}</svg></div></div>
    <div class="panel"><h3>Its journey</h3><ol class="steps">${st.steps.map(s=>`<li class="${s.done?'done':''}"><b>${esc(s.t)}</b>${esc(s.d)}</li>`).join('')}</ol></div>
    <div class="panel"><h3>Service book</h3><p>Lifetime service at the bench where it was made. Next recommended service around ${svc.toLocaleDateString('en-GB',{month:'long',year:'numeric'})}.</p><a class="btn line sm" href="#viewings/service-${encodeURIComponent(v.serial)}" style="margin-top:14px">Book a service</a></div>
   </div></div>`; },
-viewings(sub){ return viewingsHTML(sub); }
+viewings(sub){ return viewingsHTML(sub); },
+compare(sub){ const [a,b]=(sub||'2104/2280').split('/'); const A=byId(a)||W[0], B=byId(b)||W[3];
+  const pr=w=>+w.cal.match(/(\d+) hours/)[1];
+  const rows=[['Price',w=>chf(w.price)],['Case',w=>w.case],['Diameter',w=>w.dia+' mm'],['Thickness',w=>w.thick+' mm'],['Lug width',w=>w.lug+' mm'],['Water resistance',w=>w.water+' m'],['Movement',w=>w.cal],['Power reserve',w=>pr(w)+' hours'],['Complication',w=>w.comp],['Dial',w=>w.dial],['Made each year',w=>w.made]];
+  const opt=sel=>W.map(w=>`<option value="${w.id}" ${w.id===sel.id?'selected':''}>${esc(w.name)}</option>`).join('');
+  const sz=w=>`style="width:calc(min(100%,300px)*${(w.dia/42).toFixed(3)})"`;
+  return `${back('#shop','The collection')}<h1 class="v-h">Side by <em>side.</em></h1><p class="v-sub" style="margin-bottom:34px">Drawn to true relative size. Differences are marked in gold.</p>
+  <div class="cmp-sel"><label><span class="sr">First watch</span><select id="cmpA">${opt(A)}</select></label><label><span class="sr">Second watch</span><select id="cmpB">${opt(B)}</select></label></div>
+  <div class="cmp-viz" data-light="day"><div><div class="wdw" ${sz(A)}>${watchSVG(A,A.straps[0])}</div><p>${A.dia} mm</p></div><div><div class="wdw" ${sz(B)}>${watchSVG(B,B.straps[0])}</div><p>${B.dia} mm</p></div></div>
+  <table class="cmp-t"><caption class="sr">${esc(A.name)} compared with ${esc(B.name)}</caption><tbody>${rows.map(([k,f])=>{ const x=String(f(A)), y=String(f(B)), d=x!==y; return `<tr><th scope="row">${k}</th><td class="${d?'win':''}">${esc(x)}</td><td class="${d?'win':''}">${esc(y)}</td></tr>`; }).join('')}</tbody></table>
+  <div style="display:flex;gap:10px;margin-top:30px;flex-wrap:wrap"><a class="btn gold" href="#watch/${A.id}">${esc(A.name)}</a><a class="btn line" href="#watch/${B.id}">${esc(B.name)}</a></div>`; },
+care(){ return `${back('#','Home')}<h1 class="v-h">Care and <em>services.</em></h1><p class="v-sub" style="margin-bottom:40px">Everything you would want to know before, and long after, a Vaucret is yours.</p>
+  <div class="care-g">
+   <div class="panel"><h3>Talk to a person</h3><p>Not a form. Your concierge answers within the day, in your language.</p>
+    <div class="concierge"><span class="avatar" aria-hidden="true">C</span><div><b>Camille Rochat</b><small>Le Brassus and Geneva. French, English, German</small><div class="acts"><a class="btn line sm" href="tel:+41218450000">+41 21 845 00 00</a><a class="btn ghost sm" href="mailto:camille@vaucret.example">Email</a></div></div></div>
+    <div class="concierge"><span class="avatar" aria-hidden="true">A</span><div><b>Ananya Mehta</b><small>Mumbai salon. English, Hindi, Marathi</small><div class="acts"><a class="btn line sm" href="tel:+912240000000">+91 22 4000 0000</a><a class="btn ghost sm" href="mailto:ananya@vaucret.example">Email</a></div></div></div></div>
+   <div class="panel"><h3>Warranty</h3><p>Ten years on the movement and case from the day of handover, and it passes to the next owner with the watch. It covers anything we made. It does not cover the strap's natural wear, or knocks and water past the stated resistance.</p>
+    <h3 style="margin-top:22px">Service for life</h3><p>Every Vaucret can come back to the bench where it was made, for as long as the house exists. We keep every part and every ledger since 1884.</p></div>
+   <div class="panel"><h3>Service prices</h3><p>Fixed prices, including return delivery by hand.</p><table class="price-t"><tbody>
+    <tr><td>Full service, Calibre V18 or V21</td><td>${chf(1200)}</td></tr><tr><td>Full service, Calibre V24 moon phase</td><td>${chf(1450)}</td></tr><tr><td>Full service, Calibre V30 tourbillon</td><td>${chf(3800)}</td></tr><tr><td>New strap, made to measure</td><td>${chf(380)}</td></tr><tr><td>Hand engraving on the caseback</td><td>${chf(450)}</td></tr><tr><td>Regulation check and timing bulletin</td><td>Free</td></tr></tbody></table><p style="margin-top:12px">We recommend a service every five to seven years. We never polish a case unless you ask.</p></div>
+   <div class="panel"><h3>Where we deliver</h3><p>Every watch is carried to you by someone from the house. Duties and taxes are quoted before you confirm.</p><div class="countries">${['Switzerland','India','United Arab Emirates','Singapore','United Kingdom','France','Germany','Italy','United States','Japan','Hong Kong'].map(c=>`<span>${c}</span>`).join('')}</div>
+    <h3 style="margin-top:22px">Currency</h3><p>Prices are set in Swiss francs. The rupee and dollar figures in this app are indicative, at about ₹117 and $1.23 to the franc, and you are invoiced in CHF.</p></div>
+  </div>
+  <div class="faq" style="margin-top:40px"><h2 class="serif" style="font-weight:300;font-size:34px;margin-bottom:10px">Questions</h2>
+   <details><summary>How do I pay?</summary><p>At handover, by card on a terminal or by bank transfer before delivery. Nothing is ever charged online.</p></details>
+   <details><summary>Can I return a watch?</summary><p>Yes, within 14 days of handover, unworn beyond trying on and with its seal intact. Engraved watches cannot be returned.</p></details>
+   <details><summary>How long until it is ready?</summary><p>Watches in stock are regulated for 14 more days in your name, then delivered. Engraving adds two days.</p></details>
+   <details><summary>How do I wind it?</summary><p>Turn the crown clockwise about 30 times, gently, until you feel it resist. Once a day keeps it running; it will run for 72 hours if you forget.</p></details>
+   <details><summary>Can I sell or pass on my watch?</summary><p>Yes. Its certificate, warranty and service book transfer with it. Ask your concierge and we will update the ledger.</p></details></div>`; },
+journal(){ return `${back('#','Home')}<h1 class="v-h">The <em>journal.</em></h1><p class="v-sub" style="margin-bottom:40px">Short notes from the valley, the bench and the ledger.</p><div class="jgrid">${STORIES.map(jcard).join('')}</div>`; },
+story(slug){ const i=STORIES.findIndex(x=>x.slug===slug); if(i<0) return V.journal(); const sx=STORIES[i], nx=STORIES[(i+1)%STORIES.length];
+  return `${back('#journal','The journal')}<article class="story"><p class="jm">${esc(sx.kicker)}</p><h1>${esc(sx.title)}</h1><p class="v-sub">${esc(sx.dek)}</p><figure class="st-img"><img src="img/${sx.img}.webp" alt=""></figure>${sx.body.map(p=>`<p class="b">${esc(p)}</p>`).join('')}
+  <nav class="st-next" aria-label="More stories"><a href="#journal">All stories</a><a href="#story/${nx.slug}">Next: ${esc(nx.title)}</a></nav></article>`; }
 };
 V._f='all';
 function gauge(f,size,big){ const r=big?66:19, c=big?75:23, sw=big?2.4:2; const vb=big?150:46;
@@ -858,9 +1052,114 @@ function viewingsHTML(sub){
    ${mine.length?mine.map(v=>{ const d=new Date(v.day+'T12:00:00Z'); const sx=SALONS.find(x=>x.id===v.salon); return `<div class="tk"><p class="tk-d"><b>${d.getUTCDate()}</b><small>${d.toLocaleDateString('en-GB',dl({month:'short'}))}</small></p><div><h4>${esc(KINDS[v.kind])}: ${esc(byId(v.ref).name)}</h4><p>${esc(sx.name)} at ${esc(v.time)}, local time</p></div><button class="btn ghost sm" type="button" data-cancel="${esc(v.id)}" aria-label="Cancel the ${esc(KINDS[v.kind])} on ${d.getUTCDate()} ${d.toLocaleDateString('en-GB',dl({month:'long'}))} at ${esc(v.time)}">Cancel</button></div>`; }).join(''):'<p style="color:var(--smoke);font-size:14px">Nothing booked yet.</p>'}</aside></div>`;
 }
 
+
+/* ───── a drawn watch: any reference, any strap, any light, your time ───── */
+let wdN=0;
+function watchSVG(w,strap,{tight=false}={}){
+  const u='w'+(++wdN), L=w.look, st=STRAPS[strap]||STRAPS[w.straps[0]], cx=200, cy=280;
+  const pat= st[2]==='croc' ? `<pattern id="${u}p" width="26" height="20" patternUnits="userSpaceOnUse"><rect width="26" height="20" fill="${st[0]}"/><path d="M0 10h26M13 0v10M0 0v20M13 10v10" stroke="${st[1]}" stroke-width="1.6" opacity=".7"/><rect x="2" y="2" width="9" height="6" rx="2" fill="rgba(255,255,255,.05)"/><rect x="15" y="12" width="9" height="6" rx="2" fill="rgba(255,255,255,.05)"/></pattern>`
+    : st[2]==='suede' ? `<pattern id="${u}p" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="${st[0]}"/><circle cx="2" cy="2" r=".8" fill="${st[1]}" opacity=".5"/><circle cx="5" cy="4" r=".6" fill="#fff" opacity=".07"/></pattern>`
+    : `<pattern id="${u}p" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="${st[0]}"/><path d="M0 8L8 0" stroke="${st[1]}" stroke-width=".5" opacity=".35"/></pattern>`;
+  let g=`<svg viewBox="${tight?'40 40 320 480':'0 0 400 560'}" class="wd" aria-hidden="true"><defs>${pat}
+   <linearGradient id="${u}c" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${L.case[0]}"/><stop offset=".55" stop-color="${L.case[1]}"/><stop offset="1" stop-color="${L.case[2]}"/></linearGradient>
+   <radialGradient id="${u}d" cx="45%" cy="38%" r="70%"><stop offset="0" stop-color="${L.dial[0]}"/><stop offset="1" stop-color="${L.dial[1]}"/></radialGradient>
+   <linearGradient id="${u}s" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".45"/><stop offset=".3" stop-color="#000" stop-opacity="0"/><stop offset=".7" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></linearGradient>
+   <radialGradient id="${u}k" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#FFB45C" stop-opacity=".05"/><stop offset=".6" stop-color="#7A3A10" stop-opacity=".35"/><stop offset="1" stop-color="#1A0A02" stop-opacity=".8"/></radialGradient>
+   <filter id="${u}g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+   <clipPath id="${u}cl"><circle cx="${cx}" cy="${cy}" r="128"/></clipPath></defs>`;
+  // straps
+  const strapPath=(y1,y2,top)=>`<path d="M140 ${y1} Q140 ${top?y2-8:y1+8} 146 ${y2} L254 ${y2} Q260 ${top?y2-8:y1+8} 260 ${y1} Z" fill="url(#${u}p)"/><path d="M140 ${y1} Q140 ${top?y2-8:y1+8} 146 ${y2} L254 ${y2} Q260 ${top?y2-8:y1+8} 260 ${y1} Z" fill="url(#${u}s)"/><path d="M148 ${y1} L152 ${y2} M252 ${y1} L248 ${y2}" stroke="rgba(239,232,219,.35)" stroke-width="1" stroke-dasharray="3 3"/>`;
+  g+=strapPath(0,150,true)+strapPath(560,410,false);
+  // lugs + case + crown
+  g+=`<rect x="150" y="118" width="18" height="48" rx="7" fill="url(#${u}c)"/><rect x="232" y="118" width="18" height="48" rx="7" fill="url(#${u}c)"/><rect x="150" y="394" width="18" height="48" rx="7" fill="url(#${u}c)"/><rect x="232" y="394" width="18" height="48" rx="7" fill="url(#${u}c)"/>
+   <rect x="344" y="266" width="16" height="28" rx="4" fill="url(#${u}c)"/><path d="M348 268v24M352 268v24M356 268v24" stroke="rgba(0,0,0,.25)"/>
+   <circle cx="${cx}" cy="${cy}" r="150" fill="url(#${u}c)"/><circle cx="${cx}" cy="${cy}" r="150" fill="none" stroke="rgba(0,0,0,.35)"/>`;
+  if(L.flute){ for(let i=0;i<120;i++){ const a=i*3*Math.PI/180; g+=`<line x1="${cx+137*Math.cos(a)}" y1="${cy+137*Math.sin(a)}" x2="${cx+149*Math.cos(a)}" y2="${cy+149*Math.sin(a)}" stroke="rgba(0,0,0,.28)" stroke-width="1.4"/>`; } }
+  g+=`<circle cx="${cx}" cy="${cy}" r="134" fill="${L.case[1]}"/><circle cx="${cx}" cy="${cy}" r="128" fill="url(#${u}d)"/><g clip-path="url(#${u}cl)">`;
+  // dial texture
+  if(L.guil==='sun'){ for(let i=0;i<180;i++){ const a=i*2*Math.PI/180; g+=`<line x1="${cx}" y1="${cy}" x2="${cx+128*Math.cos(a)}" y2="${cy+128*Math.sin(a)}" stroke="rgba(255,255,255,${i%2?.05:.1})" stroke-width=".7"/>`; } }
+  if(L.guil==='sector'){ g+=`<circle cx="${cx}" cy="${cy}" r="70" fill="rgba(255,255,255,.08)"/><circle cx="${cx}" cy="${cy}" r="112" fill="none" stroke="${L.idx}" stroke-width=".8" opacity=".6"/><circle cx="${cx}" cy="${cy}" r="70" fill="none" stroke="${L.idx}" stroke-width=".8" opacity=".6"/><path d="M${cx-128} ${cy}H${cx+128}M${cx} ${cy-128}V${cy+128}" stroke="${L.idx}" stroke-width=".6" opacity=".4"/>`; for(let i=0;i<60;i++){ const a=i*6*Math.PI/180; g+=`<line x1="${cx+116*Math.cos(a)}" y1="${cy+116*Math.sin(a)}" x2="${cx+122*Math.cos(a)}" y2="${cy+122*Math.sin(a)}" stroke="${L.idx}" stroke-width=".8"/>`; } }
+  if(L.guil==='skeleton'){ g+=`<g fill="none" stroke="${L.idx}" stroke-width="5" opacity=".9"><path d="M110 200 Q200 150 290 200"/><path d="M120 330 Q200 300 280 330"/><path d="M150 230 L250 300"/></g><g fill="none" stroke="#D99A6E" stroke-width="1.5"><circle cx="150" cy="240" r="34"/><circle cx="252" cy="232" r="26"/><circle cx="235" cy="300" r="18"/></g>`; for(let i=0;i<24;i++){ const a=i*15*Math.PI/180; g+=`<line x1="${150+34*Math.cos(a)}" y1="${240+34*Math.sin(a)}" x2="${150+38*Math.cos(a)}" y2="${240+38*Math.sin(a)}" stroke="#D99A6E" stroke-width="1.5"/>`; } }
+  if(L.moon){ g+=`<path d="M152 340 A50 50 0 0 1 248 340 Z" fill="#0B1430"/><circle cx="200" cy="352" r="22" fill="#E8C98E"/><circle cx="180" cy="322" r="1.4" fill="#E8C98E"/><circle cx="222" cy="318" r="1.1" fill="#E8C98E"/><circle cx="232" cy="334" r="1.4" fill="#E8C98E"/><path d="M152 340 H248" stroke="${L.idx}" stroke-width="1"/>`; }
+  g+=`</g>`;
+  // indices
+  const skip= (L.sub||L.tourb||L.moon) ? [6] : [];
+  for(let i=0;i<12;i++){ if(skip.includes(i)) continue; const a=(i*30-90)*Math.PI/180, r1=i===0?94:100, r2=120, wd=i===0?7:5;
+    const x1=cx+r1*Math.cos(a), y1=cy+r1*Math.sin(a), x2=cx+r2*Math.cos(a), y2=cy+r2*Math.sin(a);
+    g+=`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${L.idx}" stroke-width="${wd}" stroke-linecap="round"/>`;
+    if(i===0) g+=`<line x1="${x1+10}" y1="${y1}" x2="${x2+10}" y2="${y2}" stroke="${L.idx}" stroke-width="${wd}" stroke-linecap="round"/>`; }
+  // sub-dial or tourbillon
+  if(L.sub){ g+=`<circle cx="200" cy="350" r="30" fill="rgba(0,0,0,.18)" stroke="${L.idx}" stroke-width=".8" opacity=".9"/>`; for(let i=0;i<12;i++){ const a=i*30*Math.PI/180; g+=`<line x1="${200+24*Math.cos(a)}" y1="${350+24*Math.sin(a)}" x2="${200+28*Math.cos(a)}" y2="${350+28*Math.sin(a)}" stroke="${L.idx}"/>`; }
+    g+=`<line class="h-s" x1="200" y1="356" x2="200" y2="326" stroke="${L.hand}" stroke-width="1.2"/><circle cx="200" cy="350" r="2.6" fill="${L.hand}"/>`; }
+  if(L.tourb){ g+=`<circle cx="200" cy="352" r="34" fill="#0A0807" stroke="${L.idx}" stroke-width="1.2"/><g class="h-t"><path d="M200 320 L228 366 L172 366 Z" fill="none" stroke="${L.idx}" stroke-width="2"/><circle cx="200" cy="352" r="16" fill="none" stroke="#E8C98E" stroke-width="2"/><line x1="184" y1="352" x2="216" y2="352" stroke="#E8C98E" stroke-width="1.4"/></g>`; }
+  // light moods (beneath the hands so the lume floats on top)
+  g+=`<g class="light l-candle"><circle cx="${cx}" cy="${cy}" r="152" fill="url(#${u}k)"/></g><g class="light l-night"><rect x="0" y="0" width="400" height="560" fill="#04060C" opacity=".86"/></g>`;
+  // lume on indices
+  g+=`<g class="lume-g" filter="url(#${u}g)">`; for(let i=0;i<12;i++){ if(skip.includes(i)) continue; const a=(i*30-90)*Math.PI/180; g+=`<circle cx="${cx+113*Math.cos(a)}" cy="${cy+113*Math.sin(a)}" r="${i===0?4:3}" fill="${L.lume}"/>`; } g+=`</g>`;
+  // hands
+  const hand=(len,w0,cls)=>`<g class="${cls}"><path d="M${cx} ${cy+16} L${cx-w0} ${cy} L${cx} ${cy-len} L${cx+w0} ${cy} Z" fill="${L.hand}"/><path d="M${cx} ${cy-len+6} L${cx-w0*.35} ${cy-14} L${cx+w0*.35} ${cy-14} Z" fill="rgba(0,0,0,.18)"/><path class="lume-g" d="M${cx} ${cy-len+14} L${cx-w0*.3} ${cy-24} L${cx+w0*.3} ${cy-24} Z" fill="${L.lume}" filter="url(#${u}g)"/></g>`;
+  g+=hand(68,6,'h-h')+hand(106,4.6,'h-m')+`<circle cx="${cx}" cy="${cy}" r="5.5" fill="${L.hand}"/>`;
+  // crystal gloss
+  g+=`<path d="M108 210 A120 120 0 0 1 250 170 A140 140 0 0 0 118 250 Z" fill="rgba(255,255,255,.08)"/></svg>`;
+  return g;
+}
+function setHands(){ const d=new Date(), h=d.getHours()%12, m=d.getMinutes(), sec=d.getSeconds()+Math.floor(d.getMilliseconds()/1000*6)/6;
+  $$('.wd').forEach(svg=>{ const hh=$('.h-h',svg), mm=$('.h-m',svg), ss=$('.h-s',svg), tt=$('.h-t',svg);
+    hh&&hh.setAttribute('transform',`rotate(${h*30+m*.5} 200 280)`); mm&&mm.setAttribute('transform',`rotate(${m*6+sec*.1} 200 280)`); ss&&ss.setAttribute('transform',`rotate(${sec*6} 200 350)`); tt&&tt.setAttribute('transform',`rotate(${sec*6} 200 352)`); });
+  const lt=$('#ltTime'); if(lt) lt.textContent=String(d.getHours()).padStart(2,'0')+':'+String(m).padStart(2,'0'); }
+setInterval(setHands,1000/6);
+
+/* ───── sound: the escapement and the crown, synthesised ───── */
+let AC=null, noise=null, tickOn=false, tickT=0, tickN=0;
+function audio(){ if(AC) return AC; const C=window.AudioContext||window.webkitAudioContext; if(!C) return null; AC=new C(); const b=AC.createBuffer(1,AC.sampleRate*.05,AC.sampleRate), d=b.getChannelData(0); for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,6); noise=b; return AC; }
+function click(t,freq,q,gain,dur=.03){ const s=AC.createBufferSource(); s.buffer=noise; const f=AC.createBiquadFilter(); f.type='bandpass'; f.frequency.value=freq; f.Q.value=q; const g=AC.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(gain,t+.002); g.gain.exponentialRampToValueAtTime(.0001,t+dur); s.connect(f); f.connect(g); g.connect(AC.destination); s.start(t); s.stop(t+dur+.02); }
+function scheduleTicks(){ if(!tickOn||!AC) return; while(tickT<AC.currentTime+.25){ const tock=tickN++%2; click(tickT,tock?2600:3300,9,.55); click(tickT+.004,tock?5200:6100,14,.18,.012); tickT+=1/6; } setTimeout(scheduleTicks,80); }
+function setTick(on){ if(on&&!audio()) return; tickOn=on; $('#snd').setAttribute('aria-pressed',on); $('#sndL').textContent=on?'Ticking, six beats a second':'Listen to it tick'; if(on){ AC.resume(); tickT=AC.currentTime+.05; scheduleTicks(); } }
+function windSound(){ if(!audio()) return; AC.resume(); const t0=AC.currentTime+.05; for(let i=0;i<30;i++){ const t=t0+i*.068+(Math.random()*.01); click(t,1700+Math.random()*300,6,.35,.022); click(t+.02,900,4,.12,.03); } }
+document.addEventListener('visibilitychange',()=>{ if(document.hidden&&tickOn) setTick(false); });
+
+/* ───── timing bulletin ───── */
+const POS=['Dial up','Dial down','Crown up','Crown down','Crown left','Crown right'];
+function rates(seed){ let x=0; for(const ch of String(seed)) x=(x*31+ch.charCodeAt(0))>>>0; const r=()=>{ x=(x*1664525+1013904223)>>>0; return x/4294967296; }; return POS.map(()=>+(r()*3.2-1.3).toFixed(1)); }
+function bulletin(vals){ const W0=520,H0=300,l=60,rgt=20,t=24,b=56, y=v=>t+(4-v)/8*(H0-t-b), x=i=>l+i*(W0-l-rgt)/5;
+  let g=`<rect x="${l}" y="${y(2)}" width="${W0-l-rgt}" height="${y(-2)-y(2)}" fill="rgba(201,170,116,.18)"/>`;
+  [-4,-2,0,2,4].forEach(v=>g+=`<line x1="${l}" x2="${W0-rgt}" y1="${y(v)}" y2="${y(v)}" stroke="rgba(26,21,16,${v===0?.35:.1})"/><text x="${l-10}" y="${y(v)+4}" text-anchor="end">${v>0?'+':''}${v} s</text>`);
+  g+=`<polyline points="${vals.map((v,i)=>x(i)+','+y(v)).join(' ')}" fill="none" stroke="#8C7045" stroke-width="1.6"/>`;
+  vals.forEach((v,i)=>{ g+=`<circle cx="${x(i)}" cy="${y(v)}" r="5" fill="#F3EDE2" stroke="#8C7045" stroke-width="1.6"/><text x="${x(i)}" y="${y(v)-11}" text-anchor="middle" style="font-size:11.5px;fill:#1A1510">${v>0?'+':''}${v}</text><text x="${x(i)}" y="${H0-b+22}" text-anchor="middle">${POS[i].replace('Crown ','C. ')}</text>`; });
+  g+=`<text x="${l}" y="${H0-8}">Shaded band: our limit, ±2 seconds a day</text>`; return g; }
+$('#bull').innerHTML=bulletin([0.8,1.2,-0.4,1.6,0.3,0.9]);
+const film=$('#film'); if(film) new IntersectionObserver(e=>{ if(e[0].isIntersecting&&!RM){ film.play().catch(()=>{}); } else film.pause(); },{threshold:.25}).observe(film);
+
+/* ───── journal ───── */
+const STORIES=[
+ {slug:'six-months-of-winter',img:'valley',kicker:'The valley',title:'Six months of winter',dek:'Why a farming valley in the Jura became the quietest workshop in the world.',
+  body:['In the Vallée de Joux, the snow arrives in November and stays until April. For two hundred years the farmers here did what you do when the fields are buried: they turned to the window and to small, careful work.','At first it was parts for the houses of Geneva: wheels, pinions, springs. Then whole movements. By the time Élise Vaucret set up her bench in 1884, nearly every farmhouse had a workbench under its best window, and a family who could cut a wheel by hand.','We still keep winter hours. The light is short, so the benches face south, and the work that needs the most patience, the engraving and the final regulation, waits for the snow. Long enough, as we like to say, to finish a watch properly.']},
+ {slug:'seven-coats-of-blue',img:'kiln',kicker:'Grand feu',title:'Seven coats of blue',dek:'The Heure Bleue dial goes into the kiln seven times. Four in ten survive.',
+  body:['Grand feu enamel is glass, ground to a powder, mixed with water and laid over a silver dial with a brush. It goes into the kiln at around 800 degrees for a little under a minute. Then it comes out, cools, and the next coat goes on.','Seven times. Each firing is a chance for a bubble, a speck of dust or a hairline crack, and enamel cannot be repaired. A flawed dial is simply finished. Four in ten make it through.','What you get for the trouble is a colour that never fades, sitting over the hand-turned guilloché like deep water over sand. Under candlelight it goes almost black. In daylight it is the blue of the lake at nine in the morning.']},
+ {slug:'a-screw-nobody-sees',img:'screw',kicker:'Finishing',title:'A screw nobody sees',dek:'An hour of polishing for a part smaller than a grain of rice.',
+  body:['Black polish, or poli noir, is the hardest finish in watchmaking. The surface of a steel screw head is worked flat against tin and diamond paste until it is so perfectly level that it reflects nothing from most angles, and looks black.','Tilt it a degree and it flashes white. Get the pressure wrong and the edge rounds, and the hour is gone.','Most of the screws we polish this way sit under the dial, where no owner will ever see them. We do it anyway, because the watchmaker who opens the watch in a hundred years will.']},
+ {slug:'the-watch-that-came-back',img:'cabinet',kicker:'From the ledger',title:'The watch that came back',dek:'A Vaucret from 1961 returns to the bench where it was made.',
+  body:['Last spring a parcel arrived from Mumbai: a small gold watch, stopped, its crystal clouded, its strap long gone. Inside the caseback, scratched in a hand we recognised, a serial number and a date. March 1961.','We found it in the bench ledger in an afternoon. Made by Paul Vaucret, sold to a doctor in Bombay, serviced once in 1979. The owner was his granddaughter.','It took Mireille six weeks. Every part was cleaned by hand, two worn pivots were remade on the lathe, and the original dial was left exactly as it was, patina and all. It is running again, within three seconds a day. Service for life means exactly that.']}
+];
+function jcard(sx){ return `<article class="jcard"><div class="ji"><img src="img/${sx.img}.webp" alt="" loading="lazy"></div><p class="jm">${esc(sx.kicker)}</p><h3>${esc(sx.title)}</h3><p>${esc(sx.dek)}</p><a href="#story/${sx.slug}" aria-label="Read: ${esc(sx.title)}"></a></article>`; }
+$('#jShelf').innerHTML=STORIES.map(jcard).join('');
+
+/* ───── currency ───── */
+const curSel=$('#curSel'); curSel.value=CURR;
+curSel.addEventListener('change',()=>{ CURR=curSel.value; try{ localStorage.setItem('vaucret.cur',CURR); }catch(e){} $('.h-price').textContent=chf(46500); renderShelf(); if(current) render(current,curSub); toast(CURR==='CHF'?'Prices in Swiss francs.':`Prices shown in ${CURR} at an indicative rate. You are invoiced in CHF.`); });
+$('.h-price').textContent=chf(46500);
+
+/* ───── live dial on the home page ───── */
+const ltDial=$('#ltDial'); ltDial.innerHTML=watchSVG(byId('2104'),'Navy alligator');
+$('#ltLight').addEventListener('change',e=>{ ltDial.dataset.light=e.target.value; });
+$('#snd').addEventListener('click',()=>setTick(!tickOn));
+$('#windBtn').addEventListener('click',()=>{ windSound(); const h=$('.h-m',ltDial); if(h&&!RM) ltDial.animate([{transform:'rotate(0)'},{transform:'rotate(-1.5deg)'},{transform:'rotate(1.5deg)'},{transform:'rotate(0)'}],{duration:400,iterations:3}); });
+try{ $('#ltWhere').textContent='Your time, '+Intl.DateTimeFormat().resolvedOptions().timeZone.split('/').pop().replace(/_/g,' '); }catch(e){}
+setHands();
+
 /* ───── routing ───── */
-const VIEWS=['shop','watch','bag','checkout','order','vault','owned','viewings'];
-const TAB={shop:'shop',watch:'shop',bag:'bag',checkout:'bag',order:'vault',vault:'vault',owned:'vault',viewings:'viewings'};
+const VIEWS=['shop','watch','bag','checkout','order','vault','owned','viewings','compare','care','journal','story'];
+const TAB={shop:'shop',watch:'shop',bag:'bag',checkout:'bag',order:'vault',vault:'vault',owned:'vault',viewings:'viewings',compare:'shop',care:'',journal:'',story:''};
 let current=null, curSub=null, routing=false, first=true, lastFocus=null;
 const pt=$('#pt'), ptC=$('#ptC'), ptR=$('#ptR'), ptK=$('#ptK'), ptG=$('#ptG');
 (function(){ let k=''; for(let i=0;i<90;i++){ const a=i*4*Math.PI/180; k+=`<line x1="${Math.cos(a)}" y1="${Math.sin(a)}" x2="${Math.cos(a)*.94}" y2="${Math.sin(a)*.94}" stroke="#C9AA74" stroke-width=".006" opacity=".7"/>`; } ptK.innerHTML=k; })();
@@ -878,7 +1177,7 @@ async function route(){
   $$('.view').forEach(el=>{ const on=v&&el.id==='v-'+v; el.classList.toggle('on',on); el.toggleAttribute('inert',!on); });
   $('#home-main').toggleAttribute('inert',!!v);
   if(v){ if(!current) lastFocus=document.activeElement; current=v; curSub=sub; document.body.classList.add('locked'); render(v,sub); const el=$('#v-'+v); el.scrollTop=0; el.focus({preventScroll:true}); $('#hd').classList.add('solid'); setTab(TAB[v]);
-    document.title=({shop:'Collection',watch:(byId(sub)||{}).name||'Watch',bag:'Bag',checkout:'Checkout',order:'Order confirmed',vault:'Your vault',owned:'Your watch',viewings:'Private viewings'})[v]+' — VAUCRET';
+    document.title=({shop:'Collection',watch:(byId(sub)||{}).name||'Watch',bag:'Bag',checkout:'Checkout',order:'Order confirmed',vault:'Your vault',owned:'Your watch',viewings:'Private viewings',compare:'Compare',care:'Care and services',journal:'Journal',story:(STORIES.find(x=>x.slug===sub)||{}).title||'Journal'})[v]+' — VAUCRET';
     if(!RM) $$('.view-in > *',el).slice(0,5).forEach((n,i)=>n.animate([{opacity:0,transform:'translateY(30px)'},{opacity:1,transform:'none'}],{duration:900,delay:100+i*70,easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'}));
     if(v==='order'&&!RM){ const t=$('#okT'); t&&t.animate([{strokeDashoffset:70},{strokeDashoffset:0}],{duration:900,delay:400,easing:'cubic-bezier(.16,1,.3,1)',fill:'forwards'}); } else if(v==='order'){ const t=$('#okT'); t&&(t.style.strokeDashoffset=0); }
   } else { current=null; curSub=null; document.body.classList.remove('locked'); setTab('home'); document.title='VAUCRET — Atelier horloger, Vallée de Joux'; renderShelf(); vaultTeaser(); hdSolid(); if(!first&&lastFocus&&document.contains(lastFocus)) lastFocus.focus({preventScroll:true}); }
@@ -898,7 +1197,9 @@ function wire(v,host){
     $$('.pd-thumbs button',host).forEach(b=>b.addEventListener('click',()=>{ im.style.opacity=0; setTimeout(()=>{ im.src=`img/${b.dataset.g}.webp`; im.style.opacity=1; },200); $$('.pd-thumbs button',host).forEach(x=>x.setAttribute('aria-pressed',x===b)); }));
     main.addEventListener('pointermove',e=>{ if(e.pointerType!=='mouse') return; const r=main.getBoundingClientRect(); im.style.transformOrigin=`${(e.clientX-r.left)/r.width*100}% ${(e.clientY-r.top)/r.height*100}%`; im.style.transform='scale(2)'; });
     main.addEventListener('pointerleave',()=>{ im.style.transform=''; });
-    const en=$('#engr',host); en&&en.addEventListener('input',()=>{ $('#engrN',host).textContent=en.value.length; }); }
+    const en=$('#engr',host); en&&en.addEventListener('input',()=>{ $('#engrN',host).textContent=en.value.length; });
+    const w=byId(curSub); host.addEventListener('change',e=>{ if(e.target.name==='strap') { $('#tryW',host).innerHTML=watchSVG(w,e.target.value,{tight:true}); setHands(); } if(e.target.name==='tl') $('#try',host).dataset.light=e.target.value; }); setHands(); }
+  if(v==='compare'){ const go=()=>{ location.hash=`compare/${$('#cmpA',host).value}/${$('#cmpB',host).value}`; }; $('#cmpA',host).addEventListener('change',go); $('#cmpB',host).addEventListener('change',go); setHands(); }
   if(v==='bag'){ $$('[data-rm]',host).forEach(b=>b.addEventListener('click',()=>{ const it=S.bag.splice(+b.dataset.rm,1)[0]; DB.save(); syncBadges(); render('bag'); toast(`${esc(byId(it.id).name)} removed. <button type="button" id="undoRm">Undo</button>`); $('#undoRm').onclick=()=>{ if(!inBag(it.id)) S.bag.push(it); DB.save(); syncBadges(); if(current==='bag') render('bag'); $('#toast').classList.remove('on'); }; const f=$('#v-bag [data-rm]')||$('#v-bag .btn'); f&&f.focus(); })); }
   if(v==='checkout'&&S.bag.length){ const f=$('#co',host);
     f.addEventListener('change',e=>{ if(e.target.name==='dl'){ $('#dlHand',host).hidden=e.target.value!=='hand'; $('#dlSalon',host).hidden=e.target.value!=='salon'; } });
@@ -909,7 +1210,7 @@ function wire(v,host){
       const items=S.bag.map(b=>{ const k=S.vault.filter(x=>x.id===b.id).length; const serial=`VC-${b.id}-${String(40+Math.floor(Math.random()*50)+k).padStart(4,'0')}`; return {...b,serial}; });
       S.orders.push({no,at,email:em,dl,items}); items.forEach(i=>S.vault.push({serial:i.serial,id:i.id,strap:i.strap,engr:i.engr,owner:n,at,wound:at,dl,order:no}));
       S.bag=[]; S.lastName=n; S.lastEmail=em; if(!DB.save()){ $('#coErr',host).textContent='Your browser blocked saving. Try outside private mode.'; return; } syncBadges(); location.hash='order/'+no; }); }
-  if(v==='owned'){ const b=$('#wound',host); b&&b.addEventListener('click',()=>{ const sn=curSub, x=S.vault.find(q=>q.serial===sn); if(!x) return; x.wound=Date.now(); DB.save(); render('owned',sn); $('#wound').focus(); toast('Fully wound. 72 hours of reserve.'); }); }
+  if(v==='owned'){ const b=$('#wound',host); b&&b.addEventListener('click',()=>{ const sn=curSub, x=S.vault.find(q=>q.serial===sn); if(!x) return; x.wound=Date.now(); DB.save(); windSound(); render('owned',sn); $('#wound').focus(); toast('Fully wound. 72 hours of reserve.'); }); }
   if(v==='viewings'){ const f=$('#vf',host);
     f.addEventListener('change',e=>{ const n=e.target.name; if(!n) return; if(n==='kind'){ sel.kind=e.target.value; if(sel.kind==='service'&&S.vault[0]){ sel.serial=sel.serial||S.vault[0].serial; } }
       else if(n==='ref'){ if(sel.kind==='service'){ sel.serial=e.target.value; sel.ref=(S.vault.find(v=>v.serial===sel.serial)||{}).id; } else sel.ref=e.target.value; }

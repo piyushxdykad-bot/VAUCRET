@@ -8,6 +8,12 @@ A concept website for a fictional Swiss watch atelier. As you scroll, a canvas f
 - **Shop:** the collection and product pages, with strap choice, hand engraving and stock per year.
 - **Bag and checkout:** hand delivery or salon collection, paid at handover. Nothing is charged; this is a concept.
 - **Vault:** every watch you own, with its serial number, certificate of origin, live power-reserve gauge ("I just wound it"), its journey and its service book.
+- **Light and time:** a drawn live watch shows your current time, in daylight, candlelight or night lume, with a synthesised tick at six beats a second and a crown-winding sound.
+- **Strap configurator:** on each product page, changing the strap or light updates the drawn watch.
+- **Compare:** two references side by side, drawn to true relative size.
+- **Proof:** a film of the watchmaker at the bench and a timing bulletin in six positions, with a bulletin per serial in the vault.
+- **Care and services:** warranty, fixed service prices, delivery countries, named concierges, and a CHF / INR / USD switch at indicative rates.
+- **Journal:** short stories with a reader view.
 - **Viewings:** private viewings, applications and services, with salon-local days and times.
 - **Style:** an ebony and champagne palette, self-hosted Cormorant Garamond and Jost, a loupe cursor and a caseback page transition.
 
